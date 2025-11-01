@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.cdnfonts.com/css/post-no-bills-jaffna");
+
+body {
+  background-image: url("assets/cartoon-computer-games-night-forest-landscape-plant-green-natural-environment-wood-grass/41530.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#label h1 {
+  font-family: "Press Start 2P", system-ui;
+  -webkit-text-stroke: 2px black;
+}
+
+#label label {
+  font-family: "Post No Bills Jaffna", sans-serif;
+  -webkit-text-stroke: 1px black;
+}
+
+#label input {
+  /* background-color: rgb(255, 255, 255, 0.5); */
+  background-color: rgb(75, 54, 32, 0.3);
+}
+
+#label input:focus {
+  background-color: rgb(75, 54, 32, 0.5);
+}
+
+#label button {
+  color: rgb(117, 120, 117, 0.9);
+  font-family: "Press Start 2P", system-ui;
+  /* background-color: rgb(255, 255, 255, 0.5); */
+  -webkit-text-stroke: 1px black;
+}
+
+#label {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(93, 61, 31, 0.7),
+    rgb(123, 92, 76, 0.7)
+  );
+}
+
+#main #content {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(93, 61, 31, 0.7),
+    rgb(123, 92, 76, 0.7)
+  );
+}
+
+#main h1 {
+  font-family: "Press Start 2P", system-ui;
+  -webkit-text-stroke: 2px black;
+}
+
+#main p {
+  font-family: "Post No Bills Jaffna", sans-serif;
+}
+
+#main button {
+  font-family: "Press Start 2P", system-ui;
+  /* background-color: rgb(255, 255, 255, 0.5); */
+  -webkit-text-stroke: 1px black;
+}
+
+#board {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(93, 61, 31, 0.7),
+    rgb(123, 92, 76, 0.7)
+  );
+}
+
+#rule {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(93, 61, 31, 0.7),
+    rgb(123, 92, 76, 0.7)
+  );
+}
+
+#blured {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  backdrop-filter: blur(3px);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#rule h1 {
+  font-family: "Press Start 2P", system-ui;
+  -webkit-text-stroke: 2px black;
+}
+
+#rule p {
+  font-family: "Post No Bills Jaffna", sans-serif;
+}
