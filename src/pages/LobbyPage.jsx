@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Label from "../components/label";
+import Label from "../components/Label";
 import Return from "../components/Return";
 
 export default function LobbyPage() {
