@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import victory from "../assets/victory.png";
+import difda3 from "../assets/difda3.png";
+import backgroundWinner from "../assets/backgroundWinner.png";
 
 export default function GameBoard({ player, setPlayer }) {
   const [playerTurn, setPlayerTurn] = useState(1);
   const [takenLilypads, setTakenLilypads] = useState(["11", "55"]);
+  const [winnerName, setWinnerName] = useState();
+  const navigate = useNavigate();
 
   // security check
   // let navigate = useNavigate();
@@ -48,6 +53,7 @@ export default function GameBoard({ player, setPlayer }) {
 
       if (oppm.moves.length == 1 && oppm.moves[0] == newPosition)
         return console.log(player[1].name + " lost the game!");
+      setWinnerName(player[0].name);
     } else {
       setPlayerTurn(1);
       setPlayer((prev) => [
@@ -66,6 +72,7 @@ export default function GameBoard({ player, setPlayer }) {
 
       if (oppm.moves.length == 1 && oppm.moves[0] == newPosition)
         return console.log(player[0].name + " lost the game!");
+      setWinnerName(player[1].name);
     }
   }
 
@@ -168,6 +175,51 @@ export default function GameBoard({ player, setPlayer }) {
       <div className="grid grid-cols-5 grid-rows-5 w-max gap-[.5rem]">
         {rows}
       </div>
+      {winnerName ? (
+        <div
+          className="winnerCard absolute inset-0 flex flex-col justify-center items-center bg-black/60 backdrop-blur-sm z-50 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${backgroundWinner})`,
+          }}
+        >
+          <img src={victory} alt="victory" className="w-40" />
+          <h1 className="text-white text-3xl mt-4 font-press-start text-center drop-shadow-lg">
+            Player {winnerName} Won!
+          </h1>
+          <img src={difda3} alt="frog" className="w-40 mt-4" />
+          <div className="flex gap-4 mt-6">
+            <button
+              onClick={() => {
+                setPlayer([
+                  { ...player[0], ready: false, position: "11" },
+                  { ...player[1], ready: false, position: "55" },
+                ]);
+                setWinnerName(undefined);
+                navigate("/lobby");
+              }}
+              style={{ border: "1px solid #000", boxShadow: "0 3px #000" }}
+              className="text-[#757875e6] bg-[#624A35]/85 cursor-pointer text-2xl px-6 py-4 rounded-md duration-300 hover:-translate-y-2"
+            >
+              Replay
+            </button>
+
+            <button
+              onClick={() => {
+                setPlayer([
+                  { ...player[0], ready: false, position: "11" },
+                  { ...player[1], ready: false, position: "55" },
+                ]);
+                setWinnerName(undefined);
+                navigate("/lobby");
+              }}
+              style={{ border: "1px solid #000", boxShadow: "0 3px #000" }}
+              className="text-[#757875e6] bg-[#624A35]/85 cursor-pointer text-2xl px-6 py-4 rounded-md duration-300 hover:-translate-y-2"
+            >
+              Return
+            </button>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
